@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PhotosViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    PhotosViewController *cont = [[PhotosViewController alloc] init];
+    
+    UINavigationController *nvg = [[UINavigationController alloc] initWithRootViewController:cont];
+    cont.title = @"Instgram";
+    self.window.rootViewController = nvg;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
